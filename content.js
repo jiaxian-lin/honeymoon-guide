@@ -3824,6 +3824,74 @@ Object.assign(window.TRIP.chapters.find(c=>c.id==='day-8'), {
  c.pendingPlaces=['原始计划中的摩拉基巨石、奥马鲁、蒸汽朋克总部：白天实际停靠及顺序待补充。','第一教堂至火车站的实际交通方式待补充。','民宿完整地址待确认，暂不绘制火车站至民宿路线。'];
 })();
 
+// 09.14：上午两处海滩的实际经历。
+(() => {
+ const c=window.TRIP.chapters.find(c=>c.id==='day-10');
+ c.title='09.14 · 在 Sandfly Bay 看海狮';c.heading='在 Sandfly Bay，看海狮晒太阳';c.navTitle='在 Sandfly Bay 看海狮';
+ c.intro='早上先去隧道海滩，没有看到海狮，最后又去了 Sandfly Bay。这次看到了七八只，还有一只刚刚上岸。';
+ c.tags=['09.14','Tunnel Beach → Sandfly Bay','野生海狮'];
+ c.places=[{...itineraryPlaces.tunnel,id:'day10-tunnel',description:'早上先来隧道海滩，没有看到海狮。沿用原有区域参考定位，具体停车与徒步起点待核实。'},
+ {id:'day10-sandfly-parking',name:'Sandfly Bay · 停车场',coordinates:[-45.89254,170.63751],description:'Seal Point Road 尽头的停车场，停车后步行下海滩。',source:'https://mapcarta.com/N616966928'},
+ {id:'day10-sandfly-beach',name:'Sandfly Bay · 看海狮',coordinates:[-45.89721,170.64646],description:'看到约七八只海狮晒太阳，还有一只刚上岸。海滩区域参考点，非动物固定位置。',source:'https://mapcarta.com/W152390705'},
+ {...itineraryPlaces.queenstown,id:'day10-queenstown',description:'原始计划中的后续目的地，下午实际行程和具体住宿待补充。'}];
+ c.routes=[{routeId:'day-10-tunnel-sandfly',mode:'drive',points:['day10-tunnel','day10-sandfly-parking'],note:'两处海滩之间的驾车路网参考；Tunnel Beach 沿用区域定位，停车入口待核实。'},
+ {routeId:'day-10-sandfly-walk',mode:'walk',points:['day10-sandfly-parking','day10-sandfly-beach'],note:'停车场至海滩的步行参考，并非当天寻找海狮的完整轨迹。'},
+ {routeId:'day-10-sandfly-return',mode:'walk',points:['day10-sandfly-beach','day10-sandfly-parking'],note:'从海滩步行回停车场的路网参考。'},
+ {routeId:'day-10-return-queenstown',mode:'drive',points:['day10-sandfly-parking','day10-queenstown'],note:'沿用原始计划返回皇后镇的自驾参考，下午实际行程待补充。'}];
+ c.blocks=[
+  {
+    "type": "heading",
+    "text": "先去了隧道海滩，没见到海狮"
+  },
+  {
+    "type": "paragraph",
+    "text": "这天早上，我们先去了 Tunnel Beach 隧道海滩，本来想去那边看看海狮，结果没有看到。出发前就在纠结，到底去 Tunnel Beach 还是 Sandfly Bay。网上不少人说 Sandfly Bay 不太好走，下面一段是沙路，我们就想着先选简单一点的。"
+  },
+  {
+    "type": "heading",
+    "text": "最后还是去了 Sandfly Bay，这次看到七八只"
+  },
+  {
+    "type": "paragraph",
+    "text": "隧道海滩没看到海狮，我们最后还是去了 Sandfly Bay。到了那边，真的看到了七八只左右的野生海狮，懒洋洋地躺在沙滩上晒太阳。还很幸运地看到了一只刚刚上岸的海狮，这一趟总算没白走。"
+  },
+  {
+    "type": "heading",
+    "text": "沙路没有想象中难走，回程爬坡还是会喘"
+  },
+  {
+    "type": "paragraph",
+    "text": "两个地方最后都去了，全程走下来，我们没有觉得特别累。Sandfly Bay 单趟我们走了大约 20 分钟，回程爬坡的时候我有点喘，其他的还好。这只是我们当天的用时和感受，沙路、坡度和每个人的体力不一样，安排时间时别只卡着这 20 分钟。"
+  },
+  {
+    "type": "paragraph",
+    "text": "如果主要是想看海狮，按我们这次的体验，我会更推荐直接去 Sandfly Bay。不过毕竟是野生动物，我们那天看到了七八只，不代表每次去都一定能看到。"
+  },
+  {
+    "type": "paragraph",
+    "text": "我们去的时候，还看到有人在铺设简易道路，想着说不定以后会更好走一些。这是 2026 年 9 月当天看到的情况，后来修到什么程度、现在是否更好走，还是要看现场和官方步道信息。"
+  },
+  {
+    "type": "note",
+    "text": "看海狮时至少保持 20 米距离，不要靠近、触摸或喂食，也不要挡住它们往返海里的路。看起来在懒洋洋地晒太阳，也要给它们留足空间。"
+  },
+  {
+    "type": "links",
+    "items": [
+      {
+        "label": "DOC：Sandfly Bay 步道与野生动物观赏提示",
+        "url": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/otago-peninsula-area/things-to-do/sandfly-bay-track/"
+      },
+      {
+        "label": "DOC：Tunnel Beach 步道信息",
+        "url": "https://www.doc.govt.nz/tunnelbeach"
+      }
+    ]
+  }
+];
+ c.pendingPlaces=['但尼丁民宿地址、出发到隧道海滩的路段待补充。','Tunnel Beach 精确停车位置及徒步路线待补充。','下午返回皇后镇的停靠、时间及住宿待补充，暂保留原始计划的城市参考。'];
+})();
+
 // 已确认的皇后镇三晚住宿；经用户许可核对地址坐标。
 (() => {
   const address = '10 Robertson Street, Frankton, Queenstown 9300, New Zealand';
