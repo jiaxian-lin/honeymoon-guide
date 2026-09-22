@@ -3758,6 +3758,72 @@ Object.assign(window.TRIP.chapters.find(c=>c.id==='day-8'), {
   ]
 });
 
+// 09.13：更新到达但尼丁之后的实际经历。
+(() => {
+ const c=window.TRIP.chapters.find(c=>c.id==='day-9');
+ c.heading='到了但尼丁，企鹅票却买错了地方';
+ c.title='09.13 · 抵达但尼丁，错过蓝企鹅';
+ c.navTitle='抵达但尼丁，错过蓝企鹅';
+ c.intro='抵达但尼丁后才发现，蓝企鹅归巢的票买成了奥马鲁。当天没看成企鹅，逛了第一教堂和火车站，就回民宿休息。';
+ c.tags=['09.13','第一教堂 · 火车站','企鹅观赏未成行'];
+ c.places=c.places.filter(p=>p.id!=='baldwin').map(p=>{const q={...p,description:p.description+' 原始计划中的白天停靠，实际先后待补充。'};delete q.time;return q;});
+ c.places.push({...itineraryPlaces.firstChurch,id:'day9-church',description:'抵达但尼丁后参观奥塔哥第一教堂。'}, {...itineraryPlaces.station,id:'day9-station',description:'第一教堂之后来火车站，逛完回民宿休息。'});
+ c.routes=c.routes.filter(r=>!r.points.includes('baldwin'));
+ c.routes.push({routeId:'day-9-to-church',mode:'drive',points:['steampunk','day9-church'],note:'连接原始白天计划至但尼丁的自驾参考；白天实际停靠顺序待补充。'}, {routeId:'day-9-church-station',mode:'drive',points:['day9-church','day9-station'],note:'市内暂以驾车道路作参考，教堂至火车站的实际交通方式待确认。'});
+ c.blocks=[
+  {
+    "type": "heading",
+    "text": "人到了但尼丁，企鹅票却买成了奥马鲁"
+  },
+  {
+    "type": "paragraph",
+    "text": "这天到但尼丁后，本来安排了晚上看蓝企鹅归巢，票也提前买好了，结果是我自己买错了地方，买成了奥马鲁的票。两个地方都有蓝企鹅观赏，订票时没核对清楚，最后当天没能看成。"
+  },
+  {
+    "type": "paragraph",
+    "text": "所以买票时，别只看“蓝企鹅归巢”几个字，城市、场地地址和日期都要再确认一遍。尤其行程里既有奥马鲁又有但尼丁的时候，真的很容易看岔。"
+  },
+  {
+    "type": "heading",
+    "text": "奥马鲁和但尼丁的企鹅观赏，有什么区别"
+  },
+  {
+    "type": "paragraph",
+    "text": "我们当时了解到，奥马鲁的蓝企鹅群体规模比较大，也有近距离观看的席位。不过这次没能实际去看，不能把它写成我们的现场体验，也不能保证某一晚一定比但尼丁看到更多。"
+  },
+  {
+    "type": "paragraph",
+    "text": "查官方介绍，奥马鲁 Ōamaru Penguins 的普通席距离企鹅约 10—15 米，Premium 席则只有几米，想近距离看要留意票种。晚间观赏不允许拍照、录像。"
+  },
+  {
+    "type": "paragraph",
+    "text": "但尼丁这边，Blue Penguins Pukekura 的官方说明是可以拍照，但不能开闪光灯。这是这个观赏项目的规定，不代表但尼丁所有野生动物项目都一样，现场也要听工作人员指引。"
+  },
+  {
+    "type": "links",
+    "items": [
+      {
+        "label": "奥马鲁：观赏席位与拍照规定",
+        "url": "https://www.penguins.co.nz/visit/evening-viewing"
+      },
+      {
+        "label": "但尼丁 Blue Penguins Pukekura：拍照规定",
+        "url": "https://www.bluepenguins.co.nz/faq"
+      }
+    ]
+  },
+  {
+    "type": "heading",
+    "text": "逛了第一教堂和火车站，就回民宿休息"
+  },
+  {
+    "type": "paragraph",
+    "text": "企鹅没看成，我们就去了奥塔哥第一教堂和但尼丁火车站，逛完之后回民宿休息了。这一天最想记下来的提醒，就是下单前多看一眼地址，别像我们一样，票买好了，人却在另一个城市。"
+  }
+];
+ c.pendingPlaces=['原始计划中的摩拉基巨石、奥马鲁、蒸汽朋克总部：白天实际停靠及顺序待补充。','第一教堂至火车站的实际交通方式待补充。','民宿完整地址待确认，暂不绘制火车站至民宿路线。'];
+})();
+
 // 已确认的皇后镇三晚住宿；经用户许可核对地址坐标。
 (() => {
   const address = '10 Robertson Street, Frankton, Queenstown 9300, New Zealand';
