@@ -221,11 +221,11 @@
   function render(id) {
     const nextIndex=chapters.findIndex(c=>c.id===id);index=nextIndex<0?0:nextIndex;
     const c=chapters[index];if(!c)return;whole=false;routeGeneration++;
-    document.title=c.title+' · 12天澳洲、新西兰蜜月攻略';
+    document.title=c.title+' · 12天澳洲、新西兰自由行攻略';
     $('chapter-title').textContent=c.title||c.navTitle||'未命名章节';$('chapter-kicker').textContent=c.kicker||c.group||'OUR JOURNEY';
     $('chapter-count').textContent=String(index+1).padStart(2,'0')+' / '+String(chapters.length).padStart(2,'0');
     const isMap=c.type==='map';$('chapter-layout').classList.toggle('article-mode',!isMap);$('mobile-tabs').hidden=!isMap;
-    $('detail').innerHTML=`<span class="eyebrow">${escape(c.date?'OUR DAYS TOGETHER':c.type==='article'?'TRAVEL NOTES':'SYDNEY & NEW ZEALAND')}</span><h2>${escape(c.heading||c.title).replace(/\n/g,'<br>')}</h2>${c.intro?`<p class="intro">${escape(c.intro)}</p>`:''}<div class="chips">${(c.tags||[]).map(t=>`<span class="chip">${escape(t)}</span>`).join('')}</div>${renderBlocks(c.blocks)}${isMap&&(c.places||[]).length?`<h3 class="section-title">${c.id==='overview'?'旅程停靠站':'当天的足迹'}</h3>${c.places.map((p,i)=>`<button class="stop" data-place="${escape(p.id)}" aria-pressed="false"><span class="stop-number">${String(i+1).padStart(2,'0')}</span><span><strong>${escape(p.name)}</strong><small>${p.time?escape(p.time)+' · ':''}${escape(p.description||'详细安排待补充')}</small></span></button>`).join('')}`:''}${(!(c.blocks||[]).length&&!(c.places||[]).length)||c.emptyText?`<div class="empty-state"><strong>留一点空白，给未来的旅行。</strong>${escape(c.emptyText||'这一章等待你的文字与照片。')}</div>`:''}`;
+    $('detail').innerHTML=`<span class="eyebrow">${escape(c.date?'DAILY ITINERARY':c.type==='article'?'TRAVEL NOTES':'SYDNEY & NEW ZEALAND')}</span><h2>${escape(c.heading||c.title).replace(/\n/g,'<br>')}</h2>${c.intro?`<p class="intro">${escape(c.intro)}</p>`:''}<div class="chips">${(c.tags||[]).map(t=>`<span class="chip">${escape(t)}</span>`).join('')}</div>${renderBlocks(c.blocks)}${isMap&&(c.places||[]).length?`<h3 class="section-title">${c.id==='overview'?'旅程停靠站':'当天的足迹'}</h3>${c.places.map((p,i)=>`<button class="stop" data-place="${escape(p.id)}" aria-pressed="false"><span class="stop-number">${String(i+1).padStart(2,'0')}</span><span><strong>${escape(p.name)}</strong><small>${p.time?escape(p.time)+' · ':''}${escape(p.description||'详细安排待补充')}</small></span></button>`).join('')}`:''}${(!(c.blocks||[]).length&&!(c.places||[]).length)||c.emptyText?`<div class="empty-state"><strong>留一点空白，给未来的旅行。</strong>${escape(c.emptyText||'这一章等待你的文字与照片。')}</div>`:''}`;
     $('detail').querySelectorAll('.airport-map-open').forEach(button => button.addEventListener('click', () => openAirportMap(button)));
     renderTransport(c);
     if ((c.pendingPlaces||[]).length) {
@@ -238,7 +238,7 @@
     $('detail').querySelectorAll('img').forEach(img=>{img.addEventListener('error',()=>{const fallback=document.createElement('div');fallback.className='image-fallback';fallback.textContent='图片待补充 · '+img.alt;img.replaceWith(fallback);},{once:true});});
     $('detail').querySelectorAll('.stop').forEach(b=>b.addEventListener('click',()=>{if(whole){whole=false;showMap(c);}selectPlace(b.dataset.place);}));
     document.querySelectorAll('.chapter-link').forEach(b=>{const active=b.dataset.chapter===c.id;b.classList.toggle('active',active);if(active)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});
-    $('previous').disabled=index===0;$('next').disabled=index===chapters.length-1;$('footer-label').textContent=c.date?c.date+' · 两个人的旅行':'12天澳洲、新西兰蜜月攻略';
+    $('previous').disabled=index===0;$('next').disabled=index===chapters.length-1;$('footer-label').textContent=c.date?c.date+' · 每日行程':'12天澳洲、新西兰自由行攻略';
     $('fit-route').textContent=c.id==='overview'?'⌖ 旅程范围':'⌖ 当天范围';
     closeDrawer();setMobileView('map',true);
   }

@@ -4206,7 +4206,7 @@ window.TRIP.chapters.find(c=>c.id==='overview').routes = window.TRIP.chapters.fi
 (() => {
  const overview=window.TRIP.chapters.find(c=>c.id==='overview');
  Object.assign(overview,{
-  "title": "全程地图与行程 · 十二天澳新蜜月",
+  "title": "全程地图与行程 · 12 天澳新自由行",
   "heading": "十二天，从厦门到悉尼，再绕一圈南岛",
   "intro": "09.05—09.16 · 厦门出发，经揭阳、新加坡到悉尼；皇后镇开启南岛自驾，最后经悉尼回厦门。这是我们实际走下来的行程，连走过的回头路和没安排好的地方也一起记下来。",
   "tags": [
@@ -4221,7 +4221,7 @@ window.TRIP.chapters.find(c=>c.id==='overview').routes = window.TRIP.chapters.fi
     },
     {
       "type": "paragraph",
-      "text": "这趟蜜月一共十二天。我们从厦门北坐动车到潮汕站，再去揭阳机场，搭酷航经新加坡飞悉尼。在悉尼待了一晚，逛了城市和海岸，接着飞皇后镇。从这里开始南岛自驾，往库克山、Tekapo、基督城和但尼丁走，最后回到皇后镇，经悉尼转机回厦门。"
+      "text": "这趟旅行一共十二天。我们从厦门北坐动车到潮汕站，再去揭阳机场，搭酷航经新加坡飞悉尼。在悉尼待了一晚，逛了城市和海岸，接着飞皇后镇。从这里开始南岛自驾，往库克山、Tekapo、基督城和但尼丁走，最后回到皇后镇，经悉尼转机回厦门。"
     },
     {
       "type": "paragraph",
@@ -4322,4 +4322,27 @@ window.TRIP.chapters.find(c=>c.id==='overview').routes = window.TRIP.chapters.fi
  for(const [day,id,name,time]of extras)overview.places.push({...source(day,id),id:'overview-'+id,name,time});
  const changi=source('day-1','changi'),sydney=source('day-2','day2-t1');
  overview.routes.push({routeId:'overview-singapore-sydney',mode:'flight',endpoints:[changi.coordinates,sydney.coordinates],names:['新加坡樟宜机场','悉尼机场 T1'],note:'09.06 · 酷航 TR10，02:10—11:45（当地时间），仅作航线示意。'});
+})();
+
+// 统一页面、目录与每日入口标题，突出地点和实际活动。
+(() => {
+ const titles={
+  "day-1": "厦门出发，经新加坡转机",
+  "day-2": "悉尼动物园与海港漫步",
+  "day-3": "沃森湾、邦迪海滩，飞往皇后镇",
+  "day-4": "皇后镇湖边、Luge 与观星",
+  "day-5": "NZONE 跳伞与箭镇",
+  "day-6": "途经 Twizel，徒步冰川湖",
+  "day-7": "Tekapo 到基督城",
+  "day-8": "羊驼牧场、Akaroa 与 Godley Head",
+  "day-9": "抵达但尼丁，错过蓝企鹅",
+  "day-10": "Sandfly Bay 看海狮，返回皇后镇",
+  "day-11": "Wānaka 射击与飞行体验",
+  "day-12": "机场还车，经悉尼回厦门"
+};
+ for(const [id,label]of Object.entries(titles)){
+  const chapter=window.TRIP.chapters.find(c=>c.id===id);
+  chapter.navTitle=label;chapter.heading=label;chapter.title=chapter.date+' · '+label;
+ }
+ const visa=window.TRIP.chapters.find(c=>c.id==='visa');visa.heading='签证 DIY 攻略';
 })();
