@@ -4184,3 +4184,126 @@ window.TRIP.chapters.find(c=>c.id==='overview').routes = window.TRIP.chapters.fi
   names:r.points.map(id=>c.places.find(p=>p.id===id).name)
 })));
 
+
+
+// 已完成旅行的总览：每天的入口直接复用每日章节，避免两份文案不同步。
+(() => {
+ const overview=window.TRIP.chapters.find(c=>c.id==='overview');
+ Object.assign(overview,{
+  "title": "全程地图与行程 · 十二天澳新蜜月",
+  "heading": "十二天，从厦门到悉尼，再绕一圈南岛",
+  "intro": "09.05—09.16 · 厦门出发，经揭阳、新加坡到悉尼；皇后镇开启南岛自驾，最后经悉尼回厦门。这是我们实际走下来的行程，连走过的回头路和没安排好的地方也一起记下来。",
+  "tags": [
+    "12 天 · 09.05—09.16",
+    "悉尼公共交通",
+    "南岛自驾环线"
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "从厦门出发，在南岛绕一圈"
+    },
+    {
+      "type": "paragraph",
+      "text": "这趟蜜月一共十二天。我们从厦门北坐动车到潮汕站，再去揭阳机场，搭酷航经新加坡飞悉尼。在悉尼待了一晚，逛了城市和海岸，接着飞皇后镇。从这里开始南岛自驾，往库克山、Tekapo、基督城和但尼丁走，最后回到皇后镇，经悉尼转机回厦门。"
+    },
+    {
+      "type": "paragraph",
+      "text": "悉尼基本靠公交、火车和步行，去完塔龙加动物园还坐了渡轮。到了新西兰，第一晚太晚就没取车，第二天早上才开始租。南岛的日子，有赶路的时候，也有坐在湖边、看日落和临时出门观星的时候。"
+    },
+    {
+      "type": "heading",
+      "text": "十二天，我们这样走"
+    },
+    {
+      "type": "dayIndex"
+    },
+    {
+      "type": "heading",
+      "text": "这几晚住在哪里"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "日期",
+        "住宿安排"
+      ],
+      "rows": [
+        [
+          "09.05",
+          "夜间航班／新加坡中转"
+        ],
+        [
+          "09.06",
+          "悉尼 · Megaboom City Hotel"
+        ],
+        [
+          "09.07—09.09",
+          "Frankton · 10 Robertson Street，连住三晚"
+        ],
+        [
+          "09.10",
+          "Fairlie · 民宿"
+        ],
+        [
+          "09.11—09.12",
+          "基督城 · Ramada Suites Christchurch City"
+        ],
+        [
+          "09.13",
+          "但尼丁 · 民宿"
+        ],
+        [
+          "09.14",
+          "Jack’s Point · 民宿"
+        ],
+        [
+          "09.15",
+          "当天从 Jack’s Point 出发，返程前最后一晚住宿待补充"
+        ],
+        [
+          "09.16",
+          "晚上抵达厦门"
+        ]
+      ],
+      "caption": "按已记录的入住信息整理；未确认的民宿地址不在地图上猜位置。"
+    },
+    {
+      "type": "heading",
+      "text": "回头看，最喜欢的几段"
+    },
+    {
+      "type": "paragraph",
+      "text": "皇后镇很值得多待几天。湖边、Skyline 上的日落金山，还有晚上临时开车去看星星，都很难忘。9 月 10 日从皇后镇往冰川走，一路停下来拍照，虽然一整天都在路上，却是我们觉得最值得的一天。"
+    },
+    {
+      "type": "paragraph",
+      "text": "Sandfly Bay 看到七八只海狮，还有一只刚刚上岸，也算是这趟旅行里的惊喜。Wānaka 同样很好看，可惜那天还安排了射击和开飞机，没留出太多时间慢慢逛。"
+    },
+    {
+      "type": "heading",
+      "text": "有些安排，下次会换个做法"
+    },
+    {
+      "type": "list",
+      "items": [
+        "9 月 10 日住 Fairlie 有点远，从冰川赶到民宿已经晚上七八点，第二天又回 Tekapo。我们当时为了价格选的住宿，回头看觉得不太值，住 Twizel 或 Tekapo 会更顺路。",
+        "Akaroa 看羊驼这天，山路开了不少，下午又去了 Godley Head。就我们这次的体验，觉得有点得不偿失。",
+        "蓝企鹅的票一定看清地点。我们想在但尼丁看，结果买成奥马鲁，当天就没看成。",
+        "U-Fly 的 13:15 被我记成了 13:45，迟到后只飞了半小时。有预约的活动，出发前再核对一遍确认信息。",
+        "返程是早上 7 点的飞机，提前一晚收拾好行李很有用。5 点起床到厦门落地约 18 小时，还不包括取行李和回家的时间。"
+      ]
+    },
+    {
+      "type": "note",
+      "text": "地图汇总了每日已记录的交通段。道路实线为路网参考，飞机和部分渡轮为示意；没有核实的住宿、停车点和接驳段仍保留空缺。9 月 13 日白天部分停靠的顺序还待核对。点击每天的卡片，可查看分段交通、当天记录和照片。"
+    }
+  ]
+});
+ overview.places=overview.places.filter(p=>p.id!=='robertson-stay');
+ const source=(day,id)=>window.TRIP.chapters.find(c=>c.id===day).places.find(p=>p.id===id);
+ const extras=[['day-6','day6-jasmine','Twizel · 中途午饭','09.10'],['day-6','day6-tasman','Tasman Lake · 冰川徒步起点','09.10'],['day-7','day7-tekapo','Tekapo · 走了一段回头路','09.11'],['day-8','day8-akaroa','Akaroa · 羊驼与海边','09.12'],['day-10','day10-jacks-park','Jack’s Point · 住宿周边与公园','09.14—09.15'],['day-11','day11-wanaka','Wānaka · 射击与飞行体验周边','09.15']];
+ for(const [day,id,name,time]of extras)overview.places.push({...source(day,id),id:'overview-'+id,name,time});
+ const changi=source('day-1','changi'),sydney=source('day-2','day2-t1');
+ overview.routes.push({routeId:'overview-singapore-sydney',mode:'flight',endpoints:[changi.coordinates,sydney.coordinates],names:['新加坡樟宜机场','悉尼机场 T1'],note:'09.06 · 酷航 TR10，02:10—11:45（当地时间），仅作航线示意。'});
+})();

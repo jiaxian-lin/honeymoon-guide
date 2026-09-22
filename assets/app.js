@@ -14,6 +14,7 @@
   const safeLink = url => typeof url === 'string' && (/^https?:\/\//i.test(url) || /^assets\/documents\/[a-zA-Z0-9_-]+\.pdf$/.test(url));
   function renderBlocks(blocks = []) {
     return blocks.map(b => {
+      if (b.type === 'dayIndex') return `<div class="overview-days">${chapters.filter(day=>day.date).map(day=>`<a class="overview-day" href="#${encodeURIComponent(day.id)}"><span>${escape(day.date)}</span><strong>${escape(day.navTitle||day.title)}</strong><p>${escape(day.intro)}</p><small>查看当天路线与照片 →</small></a>`).join('')}</div>`;
       if (b.type === 'heading') return `<h3 class="section-title">${escape(b.text)}</h3>`;
       if (b.type === 'paragraph') return `<div class="text-block"><p>${escape(b.text)}</p></div>`;
       if (b.type === 'note') return `<aside class="note">${escape(b.text)}</aside>`;
