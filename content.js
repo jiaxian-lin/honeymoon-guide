@@ -3828,16 +3828,16 @@ Object.assign(window.TRIP.chapters.find(c=>c.id==='day-8'), {
 (() => {
  const c=window.TRIP.chapters.find(c=>c.id==='day-10');
  c.title='09.14 · 在 Sandfly Bay 看海狮';c.heading='在 Sandfly Bay，看海狮晒太阳';c.navTitle='在 Sandfly Bay 看海狮';
- c.intro='早上先去隧道海滩，没有看到海狮，最后又去了 Sandfly Bay。这次看到了七八只，还有一只刚刚上岸。';
+ c.intro='早上逛隧道海滩和 Sandfly Bay，看到了七八只海狮。下午直接到 Jack’s Point 的民宿，没有再进皇后镇镇中心，随后去公园玩滑索。';
  c.tags=['09.14','Tunnel Beach → Sandfly Bay','野生海狮'];
  c.places=[{...itineraryPlaces.tunnel,id:'day10-tunnel',description:'早上先来隧道海滩，没有看到海狮。沿用原有区域参考定位，具体停车与徒步起点待核实。'},
  {id:'day10-sandfly-parking',name:'Sandfly Bay · 停车场',coordinates:[-45.89254,170.63751],description:'Seal Point Road 尽头的停车场，停车后步行下海滩。',source:'https://mapcarta.com/N616966928'},
  {id:'day10-sandfly-beach',name:'Sandfly Bay · 看海狮',coordinates:[-45.89721,170.64646],description:'看到约七八只海狮晒太阳，还有一只刚上岸。海滩区域参考点，非动物固定位置。',source:'https://mapcarta.com/W152390705'},
- {...itineraryPlaces.queenstown,id:'day10-queenstown',description:'原始计划中的后续目的地，下午实际行程和具体住宿待补充。'}];
+ {id:'day10-jacks-park',name:'Jack’s Point 公园 · 玩滑索',coordinates:[-45.0793721,168.7426527],description:'下午先到 Jack’s Point 的民宿，再来公园玩滑索。地图暂以 Jack Tewa Park 北侧停车点作公园参考，非民宿位置或滑索精确坐标。',source:'https://www.jackspoint.com/trails'}];
  c.routes=[{routeId:'day-10-tunnel-sandfly',mode:'drive',points:['day10-tunnel','day10-sandfly-parking'],note:'两处海滩之间的驾车路网参考；Tunnel Beach 沿用区域定位，停车入口待核实。'},
  {routeId:'day-10-sandfly-walk',mode:'walk',points:['day10-sandfly-parking','day10-sandfly-beach'],note:'停车场至海滩的步行参考，并非当天寻找海狮的完整轨迹。'},
  {routeId:'day-10-sandfly-return',mode:'walk',points:['day10-sandfly-beach','day10-sandfly-parking'],note:'从海滩步行回停车场的路网参考。'},
- {routeId:'day-10-return-queenstown',mode:'drive',points:['day10-sandfly-parking','day10-queenstown'],note:'沿用原始计划返回皇后镇的自驾参考，下午实际行程待补充。'}];
+ {routeId:'day-10-return-jacks-point',mode:'drive',points:['day10-sandfly-parking','day10-jacks-park'],note:'返回 Jack’s Point 的跨城驾车参考，以公园停车点为终点；实际先到民宿再去公园。民宿地址及短途交通未确认，因此本段不包含入住停靠，也不代表直接开到公园。'}];
  c.blocks=[
   {
     "type": "heading",
@@ -3887,9 +3887,26 @@ Object.assign(window.TRIP.chapters.find(c=>c.id==='day-8'), {
         "url": "https://www.doc.govt.nz/tunnelbeach"
       }
     ]
+  },
+  {
+    "type": "heading",
+    "text": "下午直接去 Jack’s Point，安顿好再去玩滑索"
+  },
+  {
+    "type": "paragraph",
+    "text": "看完海狮，我们继续开回皇后镇方向。这晚住在 Jack’s Point，下午到民宿后就没有再去镇中心了，而是去了 Jack’s Point 的公园玩滑索。"
+  },
+  {
+    "type": "links",
+    "items": [
+      {
+        "label": "Jack’s Point 官方公园介绍：有 flying fox 滑索",
+        "url": "https://www.jackspoint.com/trails"
+      }
+    ]
   }
 ];
- c.pendingPlaces=['但尼丁民宿地址、出发到隧道海滩的路段待补充。','Tunnel Beach 精确停车位置及徒步路线待补充。','下午返回皇后镇的停靠、时间及住宿待补充，暂保留原始计划的城市参考。'];
+ c.pendingPlaces=['但尼丁民宿地址、出发到隧道海滩的路段待补充。','Tunnel Beach 精确停车位置及徒步路线待补充。','当晚住 Jack’s Point，民宿具体地址、民宿至公园的交通方式待补充；当天没有进皇后镇镇中心。'];
 })();
 
 // 已确认的皇后镇三晚住宿；经用户许可核对地址坐标。
