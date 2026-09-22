@@ -232,6 +232,7 @@
       const title=document.createElement('strong');title.textContent='以下地点或集合位置待确认';pending.append(title);
       const list=document.createElement('ul');c.pendingPlaces.forEach(text=>{const item=document.createElement('li');item.textContent=text;list.append(item);});pending.append(list);$('detail').append(pending);
     }
+    window.PlacePhotos?.mount(c);
     $('detail').scrollTop=0;
     $('detail').querySelectorAll('img').forEach(img=>{img.addEventListener('error',()=>{const fallback=document.createElement('div');fallback.className='image-fallback';fallback.textContent='图片待补充 · '+img.alt;img.replaceWith(fallback);},{once:true});});
     $('detail').querySelectorAll('.stop').forEach(b=>b.addEventListener('click',()=>{if(whole){whole=false;showMap(c);}selectPlace(b.dataset.place);}));

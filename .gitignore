@@ -3,3 +3,10 @@ _site/
 .env
 .env.*
 *.log
+
+# 临时照片导入功能，发布前移除 index.html 中的引用
+local-photo-import.js
+
+# 本地原片保留，网页仅发布 web 目录中的兼容版本
+assets/photos/day-*/
+.local-photo-originals.json

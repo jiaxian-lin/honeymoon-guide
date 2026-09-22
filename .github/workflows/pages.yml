@@ -23,6 +23,8 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html content.js _site/
+          # 临时本地导入入口不进入公开网站
+          sed -i 's|<script src="local-photo-import.js"></script>||g' _site/index.html
           cp -R assets _site/assets
           touch _site/.nojekyll
       - uses: actions/upload-pages-artifact@v4
