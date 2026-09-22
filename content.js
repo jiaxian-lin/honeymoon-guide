@@ -1837,6 +1837,43 @@ window.TRIP = {
         },
         {
           "type": "heading",
+          "text": "比较坑的一点：买了“全险”，非铺装道路也不保"
+        },
+        {
+          "type": "paragraph",
+          "text": "这点是我们后来才知道的。取车的时候，工作人员没有跟我们说明非铺装道路的保险限制；后来我专门找客服确认，得到的答复是：我们这次租车的保障不包含非铺装道路上的相关损失。花了八百多买保险，也不能理解成什么路都能放心开。"
+        },
+        {
+          "type": "paragraph",
+          "text": "这也涉及皇后镇周边两个热门去处：Deer Park Heights（鹿园），以及通往 Paradise 的路。按照我们后来向客服确认的口径，这些涉及非铺装路面的路段也要留意，不要因为是热门景点，就默认租来的车开进去也有保障。这里记录的是我们这次的客服答复，不代表所有车行和保险都一样。"
+        },
+        {
+          "type": "paragraph",
+          "text": "Paradise 这里说的是从 Glenorchy 继续往 Paradise 方向走的碎石路段，不是把皇后镇到 Glenorchy 的整段公路都算进去。皇后镇旅游局的介绍也提到了通往 Paradise 的 gravel road。"
+        },
+        {
+          "type": "paragraph",
+          "text": "网上还有人说租的车带定位，一开进这些地方，保险就会失效。但我们没有核实这辆车是否装了定位，也没有确认“一进去，整个租期的保险都作废”这种说法。我们向客服确认的是非铺装道路的保障限制，这两件事不能混在一起写。"
+        },
+        {
+          "type": "note",
+          "text": "准备去鹿园、Paradise 或其他碎石路景点的话，订车前把具体地点和路线发给车行，问清楚能不能开、哪些损失不保，最好留一份文字回复。不要只问一句“是不是全险”。"
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "皇后镇旅游局：Glenorchy 与通往 Paradise 的碎石路",
+              "url": "https://www.queenstownnz.co.nz/stories/post/eight-of-the-best-things-to-do-in-glenorchy/"
+            },
+            {
+              "label": "Deer Park Heights 官方网站",
+              "url": "https://deerparkheights.co.nz/"
+            }
+          ]
+        },
+        {
+          "type": "heading",
           "text": "另外买了两个人的境外旅游险"
         },
         {
