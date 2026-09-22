@@ -3909,6 +3909,163 @@ Object.assign(window.TRIP.chapters.find(c=>c.id==='day-8'), {
  c.pendingPlaces=['但尼丁民宿地址、出发到隧道海滩的路段待补充。','Tunnel Beach 精确停车位置及徒步路线待补充。','当晚住 Jack’s Point，民宿具体地址、民宿至公园的交通方式待补充；当天没有进皇后镇镇中心。'];
 })();
 
+// 09.15：射击、Wānaka 与 U-Fly 的实际体验。
+Object.assign(window.TRIP.chapters.find(c=>c.id==='day-11'),{
+  "title": "09.15 · 打枪、逛 Wānaka，再去开飞机",
+  "heading": "打枪、逛 Wānaka，再去开飞机",
+  "navTitle": "打枪与飞行体验",
+  "intro": "从 Jack’s Point 出发，上午 Real Guns 射击，随后逛 Wānaka，下午去 U-Fly。记错了预约时间，原订一小时的飞行最终飞了半小时。",
+  "tags": [
+    "09.15",
+    "Real Guns → Wānaka → U-Fly",
+    "自驾"
+  ],
+  "places": [
+    {
+      "id": "day11-real-guns",
+      "name": "Real Guns New Zealand · 射击",
+      "coordinates": [
+        -44.7864216,
+        169.0826364
+      ],
+      "time": "上午",
+      "description": "1081 Cardrona Valley Road。基础套餐后现场加了一发巴雷特；定位为运营商所列地址，非具体射击位置。",
+      "source": "https://trophyhunting.co.nz/wanaka-gun-shooting-range/"
+    },
+    {
+      "id": "day11-wanaka",
+      "name": "Wānaka · 逛小镇",
+      "coordinates": [
+        -44.694046,
+        169.135859
+      ],
+      "time": "射击后",
+      "description": "打完枪到 Wānaka 逛了一下，真的很好看。地图使用湖畔区域参考点，不代表实际停车位或完整散步路线。",
+      "source": "https://commons.wikimedia.org/wiki/File:Lake_Wanaka_01.jpg"
+    },
+    {
+      "id": "day11-ufly",
+      "name": "U-Fly · 飞行体验",
+      "coordinates": [
+        -44.7237335,
+        169.2417463
+      ],
+      "time": "预约 13:15",
+      "description": "6 Spitfire Lane。误记为 13:45 导致迟到；原订 60 分钟，实际飞行 30 分钟。",
+      "source": "https://u-flywanaka.co.nz/contact/"
+    }
+  ],
+  "routes": [
+    {
+      "routeId": "day-11-guns-wanaka",
+      "mode": "drive",
+      "points": [
+        "day11-real-guns",
+        "day11-wanaka"
+      ],
+      "note": "运营商地址至 Wānaka 湖畔的道路参考；不代表当天实际停车点。"
+    },
+    {
+      "routeId": "day-11-wanaka-ufly",
+      "mode": "drive",
+      "points": [
+        "day11-wanaka",
+        "day11-ufly"
+      ],
+      "note": "Wānaka 湖畔区域至 U-Fly 的道路参考；非当天 GPS 轨迹。"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "上午去打枪，巴雷特另外加了一发"
+    },
+    {
+      "type": "paragraph",
+      "text": "早上从 Jack’s Point 的民宿出发，去 Real Guns New Zealand 打枪。我们提前买的是基础套餐，印象中当时预订页面能选的就是这个，到了现场再加了一发巴雷特。"
+    },
+    {
+      "type": "paragraph",
+      "text": "整体玩下来，感觉价格还是挺贵的。按我记得的人民币金额，基础套餐一个人 600 多，包含 8 发霰弹枪和 20 发狙击步枪；巴雷特单独一发就要 200 多。这些是我们这次的大概花费，具体枪型、套餐和价格还是看自己的订单。"
+    },
+    {
+      "type": "heading",
+      "text": "打完枪，去 Wānaka 逛一逛"
+    },
+    {
+      "type": "paragraph",
+      "text": "结束后，我们去了 Wānaka 逛了一下。这里真的很好看，只是这天下午还约了开飞机，没法一直慢悠悠地逛。"
+    },
+    {
+      "type": "heading",
+      "text": "13:15 记成 13:45，把自己给弄迟到了"
+    },
+    {
+      "type": "paragraph",
+      "text": "下午去 U-Fly 开飞机，预约明明是 13:15，我却记成了 13:45，结果迟到了。原本订的是 60 分钟，可以去看冰川山脊，最后只飞了 30 分钟。出发前一定再看一眼确认邮件，别像我一样，全靠脑子记。"
+    },
+    {
+      "type": "paragraph",
+      "text": "按我们当时预订的规则，迟到是不退款的。不过当天工作人员说风比较大，也不太适合飞 60 分钟，所以最后给我们退了差价。这个处理算是碰上了当天的天气情况，不能当成迟到也能退钱的保证。实际退了多少，还是要以订单和退款记录为准。"
+    },
+    {
+      "type": "heading",
+      "text": "像坐教练车一样，体验一下自己开飞机"
+    },
+    {
+      "type": "paragraph",
+      "text": "用的是双操纵的教练机，可以理解成空中的教练车。复杂的操作由教练来做，飞到高空、平稳下来以后，教练会让我们在他的指导下试着操纵，主要感受控制方向和转弯。并不是让游客自己独立开一架飞机。"
+    },
+    {
+      "type": "paragraph",
+      "text": "对我来说，30 分钟其实也够了，因为我比较容易晕机。老婆倒是玩得很开心，所以这个真的是因人而异。想看冰川、又不太容易晕的人，可能会更喜欢长一点的行程；像我这样容易难受的，短一点反而能好好体验。"
+    },
+    {
+      "type": "heading",
+      "text": "U-Fly 价格参考"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "体验",
+        "官网页面标价"
+      ],
+      "rows": [
+        [
+          "30 分钟 · River Valley",
+          "NZ$558"
+        ],
+        [
+          "60 分钟 · Glacier Ridge",
+          "NZ$858"
+        ]
+      ],
+      "caption": "2026 年 9 月 22 日核对官网页面；两档相差 NZ$300。不是我们当时订单或退款金额，实际费用与附加项目以预订结算为准。"
+    },
+    {
+      "type": "paragraph",
+      "text": "官网这两档都写明可以免费带一位家人或朋友同行，这不等于两人各有一份完整时长的操纵体验。订之前看清楚同行、体验时长和天气调整的安排。"
+    },
+    {
+      "type": "links",
+      "items": [
+        {
+          "label": "U-Fly 官网：30 分钟体验与价格",
+          "url": "https://u-flywanaka.co.nz/trial-flights/30-minute-trial-flight/"
+        },
+        {
+          "label": "U-Fly 官网：60 分钟冰川山脊体验与价格",
+          "url": "https://u-flywanaka.co.nz/trial-flights/60-minute-trial-flight/"
+        }
+      ]
+    }
+  ],
+  "pendingPlaces": [
+    "Jack’s Point 民宿具体地址未提供，出发至射击场的路段待补；没有使用皇后镇镇中心替代住宿。",
+    "Wānaka 实际停车、散步路线与飞行后行程待补充。"
+  ]
+});
+
 // 已确认的皇后镇三晚住宿；经用户许可核对地址坐标。
 (() => {
   const address = '10 Robertson Street, Frankton, Queenstown 9300, New Zealand';
